@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/auth', userRouter)
-//app.use('/courses', courseRouter)
+app.use('/courses', courseRouter)
 app.use('/reviews', reviewRouter)
 
 
@@ -22,15 +22,6 @@ app.use('/reviews', reviewRouter)
 
 
 
-app.get('/courses', (req, res) => {
-  res.json("boing")
-  // try{
-  //   const response = await CourseModel.find({name: req.params.name})
-  //   res.json(response)
-  // } catch (error){
-  //   res.json(error)
-  // }
-})
 
  app.get("/", (req, res) => {
    res.json("Hello")
