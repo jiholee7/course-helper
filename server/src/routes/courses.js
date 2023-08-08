@@ -1,21 +1,21 @@
-// import express from 'express'
-// import mongoose from 'mongoose'
-// import { CourseModel } from '../models/Courses.js'
-// import { verifyToken } from './users.js'
-// import cors from 'cors'
+import express from 'express'
+import mongoose from 'mongoose'
+import { CourseModel } from '../models/Courses.js'
+import { verifyToken } from './users.js'
+import cors from 'cors'
 
 
-// const router = express.Router()
+const router = express.Router()
 
 
-// router.get('/:name', cors(), async (req, res) => {
-//   try{
-//     const response = await CourseModel.find({name: req.params.name})
-//     res.json(response)
-//   } catch (error){
-//     res.json(error)
-//   }
-// })
+router.get('/:name', async (req, res) => {
+   try{
+     const response = await CourseModel.find({name: req.params.name})
+     res.json(response)
+   } catch (error){
+     res.json(error)
+   }
+})
 
 router.post('/', verifyToken, async (req, res) => {
   const course = await CourseModel.findOne({name: req.body.name})
