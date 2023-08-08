@@ -13,6 +13,8 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const [ cookies,  ] = useCookies(['access_token'])
   const [ errorMessage, setErrorMessage ] = useState(false)
   const [ reviewPage, setReviewPage ] = useState(1)
+  axios.defaults.withCredentials = true
+
 
   const [ reviewAverage, setReviewAverage ] = useState({
     rating: 0,
