@@ -11,7 +11,7 @@ const app = express()
 
 app.use(cors(
   {
-    origin: "https://course-helper-five.vercel.app"
+    origin: "*"
   }
 ))
 
