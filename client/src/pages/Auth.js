@@ -21,7 +21,7 @@ const Login = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const onSubmit = async (event) => {
     event.preventDefault()
     try{
-      const response = await axios.post('http://localhost:4000/auth/login', {
+      const response = await axios.post('https://course-helper-api.vercel.app/auth/login', {
         username,
         password
       })
@@ -60,7 +60,7 @@ const Register = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const onSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:4000/auth/register', {
+      const response = await axios.post('https://course-helper-api.vercel.app/auth/register', {
         username,
         password
       })
