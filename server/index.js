@@ -23,12 +23,13 @@ app.use('/reviews', reviewRouter)
 
 
 app.get('/courses/:name', async (req, res) => {
-  try{
-    const response = await CourseModel.find({name: req.params.name})
-    res.json(response)
-  } catch (error){
-    res.json(error)
-  }
+  res.json(req.params.name)
+  // try{
+  //   const response = await CourseModel.find({name: req.params.name})
+  //   res.json(response)
+  // } catch (error){
+  //   res.json(error)
+  // }
 })
 
  app.get("/", (req, res) => {
