@@ -8,7 +8,7 @@ import cors from 'cors'
 const router = express.Router()
 
 
-router.get('/:name', cors, async (req, res) => {
+router.get('/:name', cors(), async (req, res) => {
   try{
     const response = await CourseModel.find({name: req.params.name})
     res.json(response)
