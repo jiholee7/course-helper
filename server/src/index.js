@@ -21,6 +21,10 @@ app.use('/auth', userRouter)
 app.use('/courses', courseRouter)
 app.use('/reviews', reviewRouter)
 
+app.get("/", (req, res) => {
+  res.json("Hello")
+})
+
 mongoose.connect(`mongodb+srv://jiholeeuf:${process.env.PASSWORD}@class-review-app.1wymdd3.mongodb.net/Class-Review-App?retryWrites=true&w=majority`)
 
 
