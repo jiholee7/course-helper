@@ -22,8 +22,8 @@ app.use('/reviews', reviewRouter)
 
 
 
-app.get('/courses/:name', async (req, res) => {
-  res.json(req.params.name)
+app.get('/courses', (req, res) => {
+  res.json("boing")
   // try{
   //   const response = await CourseModel.find({name: req.params.name})
   //   res.json(response)
