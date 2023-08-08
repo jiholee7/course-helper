@@ -8,19 +8,17 @@ import { reviewRouter } from './src/routes/reviews.js'
 
 
 const app = express()
+
+app.use(cors(
+  {
+    origin: "https://course-helper-five.vercel.app"
+  }
+))
+
 app.use(express.json())
 app.use('/auth', userRouter)
 app.use('/courses', courseRouter)
 app.use('/reviews', reviewRouter)
-app.use(cors(
-  {
-    origin: "https://course-helper-five.vercel.app",
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-))
-
-
 
 app.get("/", (req, res) => {
   res.json("Hello")
