@@ -13,7 +13,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const [ cookies,  ] = useCookies(['access_token'])
   const [ errorMessage, setErrorMessage ] = useState(false)
   const [ reviewPage, setReviewPage ] = useState(1)
-  axios.defaults.withCredentials = true
+ // axios.defaults.withCredentials = true
 
 
   const [ reviewAverage, setReviewAverage ] = useState({
@@ -106,7 +106,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const searchClass = async () => {
     const searchCourse = courseName.toUpperCase()
     try {
-      const res = await axios.get(`https://course-helper-api.vercel.app`)
+      const res = await axios.get(`https://course-helper-api.vercel.app`, { withCredentials: true })
       console.log(res)
       //const res = await axios.get(`https://course-helper-api.vercel.app/courses/${searchCourse}`)
 
