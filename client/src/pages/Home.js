@@ -55,7 +55,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
 
   const getReviews = async (courseName) => {
     try{
-      const res = await axios.get(`http://localhost:4000/reviews/${courseName}`)
+      const res = await axios.get(`https://course-helper-api.vercel.app/reviews/${courseName}`)
       setReviews(res.data)
 
       let rating = 0
@@ -104,7 +104,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const searchClass = async () => {
     const searchCourse = courseName.toUpperCase()
     try {
-      const res = await axios.get(`http://localhost:4000/courses/${searchCourse}`)
+      const res = await axios.get(`https://course-helper-api.vercel.app/courses/${searchCourse}`)
       if (res.data.length === 0){
         setCourseInfo(null)
         setReviews(null)
@@ -167,7 +167,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
     newReview.date = todayDate
 
     try{
-      const res = await axios.post('http://localhost:4000/reviews', newReview, { headers: {authorization: cookies.access_token}})
+      const res = await axios.post('https://course-helper-api.vercel.app/reviews', newReview, { headers: {authorization: cookies.access_token}})
       //alert(res.data.message)
       setAlertMessage(res.data.message)
       setAlertOpen(true)
