@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors(
   {
-    origin: ["https://course-helper-omega.vercel.app"],
+    origin: ["https://course-helper-five.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
   }
