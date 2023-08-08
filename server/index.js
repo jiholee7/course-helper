@@ -5,8 +5,6 @@ import { userRouter } from './src/routes/users.js'
 import 'dotenv/config.js'
 import { courseRouter } from './src/routes/courses.js'
 import { reviewRouter } from './src/routes/reviews.js'
-import { CourseModel } from '../models/Courses.js'
-import { verifyToken } from './users.js'
 
 const app = express()
 app.use(express.json())
