@@ -45,7 +45,7 @@ const AddClass = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
     const courseName = course.name.toUpperCase()
     course.name = courseName
     try{
-      const res = await axios.post('http://localhost:4000/courses', course, { headers: {authorization: cookies.access_token}})
+      const res = await axios.post('https://course-helper-api.vercel.app/courses', course, { headers: {authorization: cookies.access_token}})
       //alert(res.data.message)
       setAlertMessage(res.data.message)
       setAlertOpen(true)
