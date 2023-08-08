@@ -1,12 +1,14 @@
 import express from 'express'
-import mongoose from 'mongoose';
-import { CourseModel } from '../models/Courses.js';
-import { verifyToken } from './users.js';
+import mongoose from 'mongoose'
+import { CourseModel } from '../models/Courses.js'
+import { verifyToken } from './users.js'
+import cors from 'cors'
+
 
 const router = express.Router()
 
 
-router.get('/:name', async (req, res) => {
+router.get('/:name', cors, async (req, res) => {
   try{
     const response = await CourseModel.find({name: req.params.name})
     res.json(response)
