@@ -7,7 +7,6 @@ const router = express.Router()
 
 
 router.get('/:courseName', async (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*')
   try{
     const response = await ReviewModel.find({courseName: req.params.courseName}).sort({ "_id": -1 })
     res.json(response)
@@ -17,7 +16,6 @@ router.get('/:courseName', async (req, res) => {
 })
 
 router.get('/ids/:userId', async (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*')
   try{
     const response = await ReviewModel.find({userOwner: req.params.userId}).sort({ "_id": -1 })
     res.json(response)
@@ -27,7 +25,6 @@ router.get('/ids/:userId', async (req, res) => {
 })
 
 router.post('/', verifyToken, async (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*')
   const newReview = new ReviewModel(req.body)
   try{
     const response = await newReview.save()
