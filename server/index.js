@@ -1,10 +1,10 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import { userRouter } from './routes/users.js'
+import { userRouter } from './src/routes/users.js'
 import 'dotenv/config.js'
-import { courseRouter } from './routes/courses.js'
-import { reviewRouter } from './routes/reviews.js'
+import { courseRouter } from './src/routes/courses.js'
+import { reviewRouter } from './src/routes/reviews.js'
 
 
 const app = express()
