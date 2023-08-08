@@ -2,11 +2,13 @@ import express from 'express'
 import mongoose from 'mongoose';
 import { ReviewModel } from '../models/Reviews.js';
 import { verifyToken } from './users.js';
+import cors from 'cors'
+
 
 const router = express.Router()
 
 
-router.get('/:courseName', async (req, res) => {
+router.get('/:courseName', cors(), async (req, res) => {
   try{
     const response = await ReviewModel.find({courseName: req.params.courseName}).sort({ "_id": -1 })
     res.json(response)
@@ -15,7 +17,7 @@ router.get('/:courseName', async (req, res) => {
   }
 })
 
-router.get('/ids/:userId', async (req, res) => {
+router.get('/ids/:userId', cors(), async (req, res) => {
   try{
     const response = await ReviewModel.find({userOwner: req.params.userId}).sort({ "_id": -1 })
     res.json(response)
