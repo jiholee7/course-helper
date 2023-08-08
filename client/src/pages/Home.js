@@ -106,7 +106,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
   const searchClass = async () => {
     const searchCourse = courseName.toUpperCase()
     try {
-      const res = await axios.get(`https://course-helper-api.vercel.app/courses`)
+      const res = await axios.get(`https://course-helper-api.vercel.app`)
       console.log(res)
       //const res = await axios.get(`https://course-helper-api.vercel.app/courses/${searchCourse}`)
 
