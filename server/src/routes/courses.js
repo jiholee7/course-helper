@@ -7,6 +7,7 @@ const router = express.Router()
 
 
 router.get('/:name', async (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*')
   try{
     const response = await CourseModel.find({name: req.params.name})
     res.json(response)
@@ -16,6 +17,7 @@ router.get('/:name', async (req, res) => {
 })
 
 router.post('/', verifyToken, async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
   const course = await CourseModel.findOne({name: req.body.name})
   if (course){
     return res.json({message: "Course already exists!"})
