@@ -14,7 +14,7 @@ const UserReviews = () => {
   useEffect(() => {
     const getReviews = async () => {
       try{
-        const res = await axios.get(`http://localhost:4000/reviews/ids/${userId}`)
+        const res = await axios.get(`https://course-helper-api.vercel.app/reviews/ids/${userId}`)
         setReviews(res.data)
       } catch (error) {
         console.error(error)
