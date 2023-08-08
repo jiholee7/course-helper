@@ -2,7 +2,6 @@ import express from 'express'
 import mongoose from 'mongoose'
 import { CourseModel } from '../models/Courses.js'
 import { verifyToken } from './users.js'
-import cors from 'cors'
 
 
 const router = express.Router()
