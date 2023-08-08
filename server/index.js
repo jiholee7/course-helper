@@ -28,4 +28,4 @@ app.use('/reviews', reviewRouter)
 mongoose.connect(`mongodb+srv://jiholeeuf:${process.env.PASSWORD}@class-review-app.1wymdd3.mongodb.net/Class-Review-App?retryWrites=true&w=majority`)
 
 
-app.listen('https://course-helper-api.vercel.app', () => console.log("SERVER STARTED!"))
+app.listen(4000, () => console.log("SERVER STARTED!"))
