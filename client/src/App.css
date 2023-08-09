@@ -190,7 +190,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
-  max-width: 20rem;
+  max-width: 35rem;
 }
 
 .overall-consensus{
