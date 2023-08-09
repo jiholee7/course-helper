@@ -5,7 +5,7 @@ const Footer = () => {
     <div className='footer'>
       <img src='./coursehelper.png' alt='logo' />
       <span>~Created By Jiho Lee~</span>
-      <span>Visit<a href='https://first-portfolio-website.vercel.app/' target='_blank'>My Website</a>for more info</span>
+      <span>Visit<a href='https://jiholee.vercel.app/' target='_blank'>My Website</a>for more info</span>
     </div>
   )
 }
