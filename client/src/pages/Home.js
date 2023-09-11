@@ -195,7 +195,7 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
       { errorMessage && (
         <div>
           <h2>Searched Class Can't Be Found.</h2>
-          <p>To add a class, go to the Add Class section</p>
+          <p>To add a class, login and go to the Add Class section</p>
         </div>
       )}
 
