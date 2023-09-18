@@ -123,6 +123,19 @@ const Home = ({ alertOpen, setAlertOpen, setAlertMessage }) => {
     }
   }
 
+  useEffect(() => {
+    const keyDownHandler = event => {
+      if (event.key === 'Enter') {
+        event.preventDefault()
+        searchClass()
+      }
+    }
+    document.addEventListener('keydown', keyDownHandler)
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler)
+    }
+  }, [])
+
   const handleReviewSliderChange = (event) => {
     const { name, value } = event.target
     const valueShower = document.querySelector(`.${name}`)
